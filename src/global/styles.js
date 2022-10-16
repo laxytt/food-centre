@@ -14,7 +14,7 @@ export const COLORS = {
 export const PARAMETERS = {
   headerHeight: 70,
   styledButton: {
-    carBackground: "#ff8c52",
+    backgroundColor: "#ff8c52",
     alignContent: "center",
     justifyContent: "center",
     borderRadius: 12,
