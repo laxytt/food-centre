@@ -9,6 +9,7 @@ export const COLORS = {
   carBackground: "white",
   statusBar: "#D64933",
   headerText: "white",
+  lightgreen: "#66DF48",
 };
 
 export const PARAMETERS = {
@@ -40,4 +41,30 @@ export const title = {
   fontWeight: "bold",
   justifyContent: "center",
   alignSelf: "center",
+};
+
+export const FONTS = {
+  ios: {
+    regular: "System",
+    light: "System",
+    lightItalic: "System",
+    bold: "System",
+    boldItalic: "System",
+    black: "System",
+    blackItalic: "System",
+  },
+  android: {
+    regular: "Roboto",
+    italic: "Roboto-Italic",
+    thin: "Roboto-Thin",
+    thinItalic: "Roboto-ThinItalic",
+    light: "Roboto-Light",
+    lightItalic: "Roboto-LightItalic",
+    medium: "Roboto-Medium",
+    mediumItalic: "Roboto-MediumItalic",
+    bold: "Roboto-Bold",
+    boldItalic: "Roboto-BoldItalic",
+    condensed: "RobotoCondensed-Regular",
+    condensedItalic: "RobotoCondensed-Italic",
+  },
 };

@@ -1,13 +1,38 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Image,
+  ScrollView,
+} from "react-native";
 import AppHeader from "../../components/Header";
 import { COLORS, PARAMETERS, title } from "../../global/styles";
 import { Button, SocialIcon } from "@rneui/themed";
 import Swiper from "react-native-swiper";
 
 export default function LoginWelcomeScreen() {
+  useEffect(() => {
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatchSignedIn({
+          type: "UPDATE_SIGN_IN",
+          payload: { userToken: "signed-in" },
+        });
+      } else {
+        dispatchSignedIn({
+          type: "UPDATE_SIGN_IN",
+          payload: { userToken: null },
+        });
+      }
+    });
+  }, []);
+
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView
+      contentContainerStyle={{ flexGrow: 1, justifyContent: "space-between" }}
+    >
       <View
         style={{
           flex: 3,
@@ -91,6 +116,7 @@ export default function LoginWelcomeScreen() {
             title="LOG IN"
             buttonStyle={PARAMETERS.styledButton}
             titleStyle={PARAMETERS.buttonTitle}
+            onPress={() => navigation.navigate("LoginScreen")}
           />
         </View>
         <View style={{ marginHorizontal: 20 }}>
@@ -101,7 +127,7 @@ export default function LoginWelcomeScreen() {
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
